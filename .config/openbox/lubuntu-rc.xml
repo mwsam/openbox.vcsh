@@ -1350,7 +1350,7 @@
     <maximized>true</maximized>
   </application>
 
-  <application class="Luckybackup">
+  <application class="Luckybackup" type="normal">
     <focus>no</focus>
     <iconic>yes</iconic>
   </application>
