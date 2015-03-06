@@ -497,7 +497,7 @@
       </keybind>
       <keybind key="S-b">
         <action name="Execute">
-          <command>chromium-browser --remote-debugging-port=9222</command>
+          <command>chromium-browser --enable-precise-memory-info --remote-debugging-port=9222</command>
         </action>
       </keybind>
       <keybind key="c">
