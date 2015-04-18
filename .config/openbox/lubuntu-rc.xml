@@ -551,7 +551,7 @@
       </keybind>
       <keybind key="n">
         <action name="Execute">
-          <command>gnome-terminal -t node -x bash -ic 'node --expose-gc'</command>
+          <command>gnome-terminal -t node -x bash -ic 'node --allow-natives-syntax --expose-gc'</command>
         </action>
       </keybind>
       <keybind key="p">
