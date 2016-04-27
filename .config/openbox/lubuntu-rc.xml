@@ -492,12 +492,12 @@
       </keybind>
       <keybind key="b">
         <action name="Execute">
-          <command>firefox</command>
+          <command>firejail firefox</command>
         </action>
       </keybind>
       <keybind key="S-b">
         <action name="Execute">
-          <command>chromium-browser --enable-precise-memory-info --remote-debugging-port=9222</command>
+          <command>firejail chromium-browser --enable-precise-memory-info --remote-debugging-port=9222</command>
         </action>
       </keybind>
       <keybind key="c">
@@ -536,7 +536,7 @@
       </keybind>
       <keybind key="i">
         <action name="Execute">
-          <command>pidgin</command>
+          <command>firejail pidgin</command>
         </action>
       </keybind>
       <keybind key="l">
@@ -546,7 +546,7 @@
       </keybind>
       <keybind key="m">
         <action name="Execute">
-          <command>thunderbird</command>
+          <command>firejail thunderbird</command>
         </action>
       </keybind>
       <keybind key="n">
