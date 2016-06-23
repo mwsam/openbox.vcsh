@@ -507,7 +507,7 @@
       </keybind>
       <keybind key="d">
         <action name="Execute">
-          <command>gimp</command>
+          <command>firejail goldendict</command>
         </action>
       </keybind>
       <keybind key="e">
@@ -531,7 +531,7 @@
       </keybind>
       <keybind key="g">
         <action name="Execute">
-          <command>goldendict</command>
+          <command>gimp</command>
         </action>
       </keybind>
       <keybind key="i">
