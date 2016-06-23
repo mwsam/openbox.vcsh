@@ -539,12 +539,12 @@
           <command>firejail pidgin</command>
         </action>
       </keybind>
-      <keybind key="l">
+      <keybind key="m">
         <action name="Execute">
-          <command>lighthouse | sh</command>
+          <command>sh -c 'xdotool search --name _cmus_ windowactivate || gnome-terminal --role=,cmus,nodecor, -t _cmus_ -x firejail bash -ic "title _cmus_; cmus"'</command>
         </action>
       </keybind>
-      <keybind key="m">
+      <keybind key="S-m">
         <action name="Execute">
           <command>firejail thunderbird</command>
         </action>
@@ -821,6 +821,36 @@
     </keybind>
     <keybind key="W-w">
       <action name="Move"/>
+    </keybind>
+    <keybind key="W-A-z">
+      <action name="Execute">
+        <command>cmus-remote --prev</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-x">
+      <action name="Execute">
+        <command>cmus-remote --play</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-c">
+      <action name="Execute">
+        <command>cmus-remote --pause</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-v">
+      <action name="Execute">
+        <command>cmus-remote --stop</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-b">
+      <action name="Execute">
+        <command>cmus-remote --next</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-s">
+      <action name="Execute">
+        <command>bash -c 'notify-send -t 5000 "$(cmus-remote -Q 2&gt;&amp;1 | head -n 4)"'</command>
+      </action>
     </keybind>
     <!--keybindings for LXPanel -->
     <keybind key="W-r">
@@ -1365,6 +1395,10 @@
 -->
     <application role="*,nodecor,*">
       <decor>no</decor>
+    </application>
+    <application role="*,cmus,*">
+      <skip_pager>yes</skip_pager>
+      <skip_taskbar>yes</skip_taskbar>
     </application>
     <application class="Evince">
       <maximized>true</maximized>
