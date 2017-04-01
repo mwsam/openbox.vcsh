@@ -477,6 +477,11 @@
           </action>
         </keybind>
       </keybind>
+      <keybind key="t">
+        <action name="Execute">
+          <command>gnome-terminal --role=,nodecor, -x bash -ic 'vim ~/.tmux.conf'</command>
+        </action>
+      </keybind>
       <keybind key="v">
         <action name="Execute">
           <command>gnome-terminal --role=,nodecor, -x bash -ic 'vim ~/.vimrc'</command>
@@ -571,7 +576,12 @@
       </keybind>
       <keybind key="t">
         <action name="Execute">
-          <command>gnome-terminal</command>
+          <command>sh -c 'xdotool search --name tmux windowactivate &amp;&amp; tmux new-window || gnome-terminal --role=,nodecor, -t tmux -x tmux'</command>
+        </action>
+      </keybind>
+      <keybind key="S-t">
+        <action name="Execute">
+          <command>gnome-terminal --role=,nodecor, -t tmux -x bash -ic 'tmux attach || tmux'</command>
         </action>
       </keybind>
       <keybind key="v">
