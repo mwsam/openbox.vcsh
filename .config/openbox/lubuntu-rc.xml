@@ -512,6 +512,11 @@
       </keybind>
       <keybind key="d">
         <action name="Execute">
+          <command>firejail transmission-gtk</command>
+        </action>
+      </keybind>
+      <keybind key="S-d">
+        <action name="Execute">
           <command>firejail goldendict</command>
         </action>
       </keybind>
@@ -590,6 +595,11 @@
         </action>
       </keybind>
       <keybind key="y">
+        <action name="Execute">
+          <command>gnome-terminal -t psql -x psql</command>
+        </action>
+      </keybind>
+      <keybind key="S-y">
         <action name="Execute">
           <command>gnome-terminal -t mysql -x mysql -u root -p --default-character-set=utf8</command>
         </action>
