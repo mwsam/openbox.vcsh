@@ -556,12 +556,12 @@
       </keybind>
       <keybind key="p">
         <action name="Execute">
-          <command>gnome-terminal -t ipython -x ipython</command>
+          <command>gnome-terminal -t ipython3 -x ipython3</command>
         </action>
       </keybind>
       <keybind key="S-p">
         <action name="Execute">
-          <command>gnome-terminal -t ipython3 -x ipython3</command>
+          <command>gnome-terminal -t ipython -x ipython</command>
         </action>
       </keybind>
       <keybind key="s">
