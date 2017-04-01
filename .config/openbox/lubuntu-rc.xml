@@ -461,25 +461,25 @@
     <keybind key="W-c">
       <keybind key="b">
         <action name="Execute">
-          <command>gnome-terminal --role=",nodecor," -x bash -ic 'vim ~/.bashrc'</command>
+          <command>gnome-terminal --role=,nodecor, -x bash -ic 'vim ~/.bashrc'</command>
         </action>
       </keybind>
       <keybind key="o">
         <action name="Execute">
-          <command>gnome-terminal --role=",nodecor," -x bash -ic 'vim ~/.config/openbox/lubuntu-rc.xml'</command>
+          <command>gnome-terminal --role=,nodecor, -x bash -ic 'vim ~/.config/openbox/lubuntu-rc.xml'</command>
         </action>
       </keybind>
       <!-- Edit snippets -->
       <keybind key="s">
         <keybind key="j">
           <action name="Execute">
-            <command>gnome-terminal --role=",nodecor," -x bash -ic 'vim ~/.vim/snippets/javascript.snippets'</command>
+            <command>gnome-terminal --role=,nodecor, -x bash -ic 'vim ~/.vim/snippets/javascript.snippets'</command>
           </action>
         </keybind>
       </keybind>
       <keybind key="v">
         <action name="Execute">
-          <command>gnome-terminal --role=",nodecor," -x bash -ic 'vim ~/.vimrc'</command>
+          <command>gnome-terminal --role=,nodecor, -x bash -ic 'vim ~/.vimrc'</command>
         </action>
       </keybind>
     </keybind>
@@ -512,7 +512,7 @@
       </keybind>
       <keybind key="e">
         <action name="Execute">
-          <command>gnome-terminal --role=",nodecor," -t ranger -x bash -ic ranger</command>
+          <command>gnome-terminal --role=,nodecor, -t ranger -x bash -ic ranger</command>
         </action>
       </keybind>
       <keybind key="S-e">
@@ -566,7 +566,7 @@
       </keybind>
       <keybind key="s">
         <action name="Execute">
-          <command>gnome-terminal --role=",nodecor," -t htop -x htop</command>
+          <command>gnome-terminal --role=,nodecor, -t htop -x htop</command>
         </action>
       </keybind>
       <keybind key="t">
@@ -576,7 +576,7 @@
       </keybind>
       <keybind key="v">
         <action name="Execute">
-          <command>gnome-terminal --role=",nodecor," -t vim -x bash -ic vim</command>
+          <command>gnome-terminal --role=,nodecor, -t vim -x bash -ic vim</command>
         </action>
       </keybind>
       <keybind key="y">
