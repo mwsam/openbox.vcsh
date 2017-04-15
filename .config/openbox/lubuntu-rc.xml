@@ -427,12 +427,12 @@
     <!-- Volume control -->
     <keybind key="W-bracketleft">
       <action name="Execute">
-        <command>bash -c 'amixer set Master 3- unmute | grep Left | egrep -o [0-9]+% | notify-send -t 500 Volume $(cat)'</command>
+        <command>bash -c 'amixer set Master 3%- unmute | grep Left | egrep -o [0-9]+% | notify-send -t 500 "Volume: $(cat)"'</command>
       </action>
     </keybind>
     <keybind key="W-bracketright">
       <action name="Execute">
-        <command>bash -c 'amixer set Master 3+ unmute | grep Left | egrep -o [0-9]+% | notify-send -t 500 Volume $(cat)'</command>
+        <command>bash -c 'amixer set Master 3%+ unmute | grep Left | egrep -o [0-9]+% | notify-send -t 500 "Volume: $(cat)"'</command>
       </action>
     </keybind>
     <!-- Put mouse cursor away -->
@@ -800,42 +800,47 @@
     <keybind key="W-v">
       <keybind key="1">
         <action name="Execute">
-          <command>bash -c 'amixer set Master 10% unmute; notify-send -t 500 Volume 10%'</command>
+          <command>bash -c 'amixer set Master 10% unmute; notify-send -t 500 "Volume: 10%"'</command>
         </action>
       </keybind>
       <keybind key="2">
         <action name="Execute">
-          <command>bash -c 'amixer set Master 20% unmute; notify-send -t 500 Volume 20%'</command>
+          <command>bash -c 'amixer set Master 20% unmute; notify-send -t 500 "Volume: 20%"'</command>
         </action>
       </keybind>
       <keybind key="3">
         <action name="Execute">
-          <command>bash -c 'amixer set Master 30% unmute; notify-send -t 500 Volume 30%'</command>
+          <command>bash -c 'amixer set Master 30% unmute; notify-send -t 500 "Volume: 30%"'</command>
         </action>
       </keybind>
       <keybind key="4">
         <action name="Execute">
-          <command>bash -c 'amixer set Master 40% unmute; notify-send -t 500 Volume 40%'</command>
+          <command>bash -c 'amixer set Master 40% unmute; notify-send -t 500 "Volume: 40%"'</command>
         </action>
       </keybind>
       <keybind key="5">
         <action name="Execute">
-          <command>bash -c 'amixer set Master 50% unmute; notify-send -t 500 Volume 50%'</command>
+          <command>bash -c 'amixer set Master 50% unmute; notify-send -t 500 "Volume: 50%"'</command>
         </action>
       </keybind>
       <keybind key="6">
         <action name="Execute">
-          <command>bash -c 'amixer set Master 60% unmute; notify-send -t 500 Volume 60%'</command>
+          <command>bash -c 'amixer set Master 60% unmute; notify-send -t 500 "Volume: 60%"'</command>
         </action>
       </keybind>
       <keybind key="7">
         <action name="Execute">
-          <command>bash -c 'amixer set Master 70% unmute; notify-send -t 500 Volume 70%'</command>
+          <command>bash -c 'amixer set Master 70% unmute; notify-send -t 500 "Volume: 70%"'</command>
         </action>
       </keybind>
       <keybind key="8">
         <action name="Execute">
-          <command>bash -c 'amixer set Master 80% unmute; notify-send -t 500 Volume 80%'</command>
+          <command>bash -c 'amixer set Master 80% unmute; notify-send -t 500 "Volume: 80%"'</command>
+        </action>
+      </keybind>
+      <keybind key="v">
+        <action name="Execute">
+          <command>bash -c 'amixer get Master | grep Left | egrep -o [0-9]+% | notify-send -t 1000 "Volume: $(cat)"'</command>
         </action>
       </keybind>
     </keybind>
