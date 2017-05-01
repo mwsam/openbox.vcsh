@@ -427,12 +427,12 @@
     <!-- Volume control -->
     <keybind key="W-bracketleft">
       <action name="Execute">
-        <command>bash -c 'amixer set Master 3%- unmute | grep Left | egrep -o [0-9]+% | notify-send -t 500 "Volume: $(cat)"'</command>
+        <command>bash -c 'amixer set Master 3%- unmute | egrep "Left|Mono" | egrep -o [0-9]+% | notify-send -t 500 "Volume: $(cat)"'</command>
       </action>
     </keybind>
     <keybind key="W-bracketright">
       <action name="Execute">
-        <command>bash -c 'amixer set Master 3%+ unmute | grep Left | egrep -o [0-9]+% | notify-send -t 500 "Volume: $(cat)"'</command>
+        <command>bash -c 'amixer set Master 3%+ unmute | egrep "Left|Mono" | egrep -o [0-9]+% | notify-send -t 500 "Volume: $(cat)"'</command>
       </action>
     </keybind>
     <!-- Put mouse cursor away -->
@@ -840,7 +840,7 @@
       </keybind>
       <keybind key="v">
         <action name="Execute">
-          <command>bash -c 'amixer get Master | grep Left | egrep -o [0-9]+% | notify-send -t 1000 "Volume: $(cat)"'</command>
+          <command>bash -c 'amixer get Master | egrep "Left|Mono" | egrep -o [0-9]+% | notify-send -t 1000 "Volume: $(cat)"'</command>
         </action>
       </keybind>
     </keybind>
