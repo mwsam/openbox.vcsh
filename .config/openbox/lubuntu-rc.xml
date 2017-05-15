@@ -25,16 +25,20 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
+    <!--  Lubuntu specific : Place new windows where the mouse is
+        <monitor>Mouse</monitor>
+        <primaryMonitor>Mouse</primaryMonitor>
+  -->
     <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-    <monitor>Primary</monitor>
+    <monitor>Mouse</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
-    <primaryMonitor>Active</primaryMonitor>
+    <primaryMonitor>Mouse</primaryMonitor>
     <!-- The monitor where Openbox should place popup dialogs such as the
        focus cycling popup, or the desktop switch popup.  It can be an index
        from 1, specifying a particular monitor.  Or it can be one of the
@@ -42,19 +46,21 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
+    <!--  Lubuntu specific : Theme = Lubuntu and font = Ubuntu
+  -->
     <name>Lubuntu-default</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
-      available characters are NDSLIMC, each can occur at most once.
-      N: window icon
-      L: window label (AKA title).
-      I: iconify
-      M: maximize
-      C: close
-      S: shade (roll up/down)
-      D: omnipresent (on all desktops).
-  -->
-    <keepBorder>yes</keepBorder>
+    available characters are NDSLIMC, each can occur at most once.
+    N: window icon
+    L: window label (AKA title).
+    I: iconify
+    M: maximize
+    C: close
+    S: shade (roll up/down)
+    D: omnipresent (on all desktops).
+-->
+    <keepBorder>no</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>DejaVu Sans</name>
@@ -123,15 +129,20 @@
     <number>2</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>Desktop 1</name>
-      <name>Desktop 2</name>
+      <!-- set names up here if you want to, like this:
+    <name>desktop 1</name>
+    <name>desktop 2</name>
+    -->
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
   <resize>
-    <drawContents>yes</drawContents>
+    <!--  Lubuntu specific : Don't draw content on resize (too heavy).
+        <drawContents>no</drawContents>
+  -->
+    <drawContents>no</drawContents>
     <popupShow>Nonpixel</popupShow>
     <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
     <popupPosition>Center</popupPosition>
@@ -313,7 +324,58 @@
         <direction>down</direction>
       </action>
     </keybind>
-    <!-- Keybindings for running applications -->
+    <!--
+        Lubuntu specific.
+        Keybindings for window tiling
+    -->
+    <!--
+        # HalfLeftScreen
+    -->
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <!--
+        # HalfRightScreen
+    -->
+    <keybind key="W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <!--
+        # HalfUpperScreen
+    -->
+    <keybind key="W-Up">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <!--
+        # HalfLowerScreen
+    -->
+    <keybind key="W-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
     <!-- Fixed window size and position -->
     <keybind key="W-0">
       <action name="Unmaximize"/>
@@ -445,12 +507,12 @@
     <keybind key="W-a">
       <keybind key="l">
         <action name="Execute">
-          <command>xscreensaver-command -lock</command>
+          <command>lxsession-default lock</command>
         </action>
       </keybind>
       <keybind key="s">
         <action name="Execute">
-          <command>lxsession-logout</command>
+          <command>lxsession-default quit</command>
         </action>
       </keybind>
     </keybind>
@@ -488,7 +550,7 @@
         </action>
       </keybind>
     </keybind>
-    <!-- Run applications -->
+    <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <keybind key="8">
         <action name="Execute">
@@ -531,7 +593,7 @@
             <enabled>true</enabled>
             <name>PCManFM</name>
           </startupnotify>
-          <command>maximize pcmanfm</command>
+          <command>lxsession-default file_manager</command>
         </action>
       </keybind>
       <keybind key="f">
@@ -877,15 +939,21 @@
         <command>bash -c 'notify-send -t 5000 "$(cmus-remote -Q 2&gt;&amp;1 | head -n 4)"'</command>
       </action>
     </keybind>
-    <!--keybindings for LXPanel -->
+    <!-- Keybindings for running Run menu from Lxpanel on Home + R-->
     <keybind key="W-r">
       <action name="Execute">
-        <command>lxpanelctl run</command>
+        <command>lxsession-default launcher</command>
       </action>
     </keybind>
     <keybind key="A-F2">
       <action name="Execute">
-        <command>lxpanelctl run</command>
+        <command>lxsession-default launcher</command>
+      </action>
+    </keybind>
+    <!-- Keybindings for running Menu from Lxpanel -->
+    <keybind key="A-F1">
+      <action name="Execute">
+        <command>lxpanelctl menu</command>
       </action>
     </keybind>
     <keybind key="C-Escape">
@@ -893,64 +961,81 @@
         <command>lxpanelctl menu</command>
       </action>
     </keybind>
+    <!-- Keybindings to toggle fullscreen -->
     <keybind key="F11">
       <action name="ToggleFullscreen"/>
     </keybind>
-    <!-- Launch Task Manager with Ctrl+Alt+Del -->
-    <keybind key="A-C-Delete">
+    <!-- Launch task manager on Ctrl + Alt + Del-->
+    <keybind key="C-A-Delete">
       <action name="Execute">
-        <command>lxtask</command>
+        <command>lxsession-default tasks</command>
       </action>
     </keybind>
-    <!-- Fast access to Terminal -->
-    <keybind key="C-A-t">
+    <!-- Launch a terminal on Ctrl + Alt + T-->
+    <keybind key="C-A-T">
       <action name="Execute">
-        <command>gnome-terminal</command>
+        <command>lxsession-default terminal</command>
       </action>
     </keybind>
-    <!-- Keybinding for PrintScreen Key -->
-    <keybind key="Print">
+    <!-- Launch a filemanager on Ctrl + Alt + D-->
+    <keybind key="C-A-D">
       <action name="Execute">
-        <command>scrot</command>
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>PCManFM</name>
+        </startupnotify>
+        <command>lxsession-default file_manager</command>
       </action>
     </keybind>
-    <keybind key="A-Print">
+    <!-- Lock the screen on Ctrl + Alt + l-->
+    <keybind key="C-A-l">
       <action name="Execute">
-        <command>scrot -s</command>
+        <command>lxsession-default lock</command>
       </action>
     </keybind>
-    <keybind key="S-Print">
-      <action name="Execute">
-        <command>scrot -u</command>
-      </action>
-    </keybind>
-    <!-- Keybindings for Multimedia Keys and LCD Backlight (alternative when not using gnome-power-manager or xfce4-volumed) -->
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <!-- <command>/usr/bin/volume.sh mute</command> -->
-        <command>amixer set Master toggle</command>
-      </action>
-    </keybind>
+    <!-- Keybinding for Volume management -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <!-- <command>/usr/bin/volume.sh up</command> -->
-        <command>amixer set Master 1+ unmute</command>
+        <command>amixer -q sset Master 3%+ unmute</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <!-- <command>/usr/bin/volume.sh down</command> -->
-        <command>amixer set Master 1- unmute</command>
+        <command>amixer -q sset Master 3%- unmute</command>
       </action>
     </keybind>
-    <keybind key="XF86PowerOff">
+    <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>lxsession-logout</command>
+        <command>amixer -q sset Master toggle</command>
       </action>
     </keybind>
+    <!-- Keybinding for terminal button-->
+    <keybind key="XF86WWW">
+      <action name="Execute">
+        <command>lxsession-default terminal</command>
+      </action>
+    </keybind>
+    <keybind key="XF86Terminal">
+      <action name="Execute">
+        <command>lxsession-default terminal</command>
+      </action>
+    </keybind>
+    <!-- Keybinding for calculator button-->
+    <keybind key="XF86Calculator">
+      <action name="Execute">
+        <command>lxsession-default calculator</command>
+      </action>
+    </keybind>
+    <!-- Keybinding for computer button-->
+    <keybind key="XF86MyComputer">
+      <action name="Execute">
+        <command>lxsession-default file_manager</command>
+      </action>
+    </keybind>
+    <!-- Keybindings for Multimedia Keys and LCD Backlight (alternative when not using gnome-power-manager or xfce4-volumed) -->
     <keybind key="C-F7">
       <action name="Execute">
-        <command>sleep 2;xset dpms force off</command>
+        <command>bash -c 'sleep 1; xset dpms force off'</command>
       </action>
     </keybind>
     <keybind key="C-F10">
@@ -963,13 +1048,37 @@
         <command>xbacklight -inc 10</command>
       </action>
     </keybind>
+    <!--
+      Take a screenshot of the current window with scrot when Alt+Print are pressed
+  -->
+    <keybind key="Print">
+      <action name="Execute">
+        <command>lxsession-default screenshot</command>
+      </action>
+    </keybind>
+    <keybind key="A-Print">
+      <action name="Execute">
+        <command>lxsession-default screenshot window</command>
+      </action>
+    </keybind>
+    <!-- Launch logout when push on the shutdown button -->
+    <keybind key="XF86PowerOff">
+      <action name="Execute">
+        <command>lxsession-default quit</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
+    <!--
+      Lubuntu specific : Specific mouse settings
+        <dragThreshold>8</dragThreshold>
+        <doubleClickTime>200</doubleClickTime>
+  -->
     <dragThreshold>8</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>200</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
-    <screenEdgeWarpTime>0</screenEdgeWarpTime>
+    <screenEdgeWarpTime>400</screenEdgeWarpTime>
     <!-- Time before changing desktops when the pointer touches the edge of the
        screen while moving a window, in milliseconds (1000 = 1 second).
        Set this to 0 to disable warping -->
@@ -1300,28 +1409,32 @@
   </mouse>
   <menu>
     <!-- You can specify more than one menu file in here and they are all loaded,
-       just don't make menu ids clash or, well, it'll be kind of pointless -->
-    <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
+     just don't make menu ids clash or, well, it'll be kind of pointless -->
+    <!-- Lubuntu specific : Default menu of Lubuntu -->
     <file>/usr/share/lubuntu/openbox/menu.xml</file>
+    <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
+    <file>menu.xml</file>
     <hideDelay>200</hideDelay>
     <!-- if a press-release lasts longer than this setting (in milliseconds), the
-       menu is hidden again -->
+     menu is hidden again -->
     <middle>no</middle>
     <!-- center submenus vertically about the parent entry -->
     <submenuShowDelay>100</submenuShowDelay>
     <!-- time to delay before showing a submenu after hovering over the parent
-       entry.
-       if this is a negative value, then the delay is infinite and the
-       submenu will not be shown until it is clicked on -->
+     entry.
+     if this is a negative value, then the delay is infinite and the
+     submenu will not be shown until it is clicked on -->
     <submenuHideDelay>400</submenuHideDelay>
     <!-- time to delay before hiding a submenu when selecting another
-       entry in parent menu
-       if this is a negative value, then the delay is infinite and the
-       submenu will not be hidden until a different submenu is opened -->
-    <showIcons>yes</showIcons>
-    <!-- controls if icons appear in the client-list-(combined-)menu -->
+     entry in parent menu
+     if this is a negative value, then the delay is infinite and the
+     submenu will not be hidden until a different submenu is opened -->
+    <applicationIcons>yes</applicationIcons>
+    <!-- Lubuntu specific : Show applications icons if openbox is build with this support -->
     <manageDesktops>yes</manageDesktops>
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
+    <showIcons>yes</showIcons>
+    <!-- controls if icons appear in the client-list-(combined-)menu -->
   </menu>
   <applications>
     <!--
@@ -1418,6 +1531,20 @@
 
   # end of the example
 -->
+    <!-- Option to maximize all normal window when launched-->
+    <!--
+  <application type="normal">
+    <maximized>true</maximized>
+  </application>
+  -->
+    <!--
+        Lubuntu specific :
+        Focus all applications launched
+        Usefull when launching applications, like terminal from pcmanfm
+  -->
+    <application class="*">
+      <focus>yes</focus>
+    </application>
     <application role="*,nodecor,*">
       <decor>no</decor>
     </application>
