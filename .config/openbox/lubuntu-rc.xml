@@ -589,7 +589,7 @@
       </keybind>
       <keybind key="S-d">
         <action name="Execute">
-          <command>firejail goldendict</command>
+          <command>urxvtc -name ,nodecor, -title dict -e bash -c 'read -p "Enter word to lookup: " word &amp;&amp; [[ -n "$word" ]] &amp;&amp; dict "$word" | less'</command>
         </action>
       </keybind>
       <keybind key="e">
