@@ -584,12 +584,12 @@
       </keybind>
       <keybind key="d">
         <action name="Execute">
-          <command>firejail transmission-gtk</command>
+          <command>urxvtc -name ,nodecor, -title dict -e bash -c 'read -p "Enter word to lookup: " word &amp;&amp; [[ -n "$word" ]] &amp;&amp; dict "$word" | less'</command>
         </action>
       </keybind>
       <keybind key="S-d">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -title dict -e bash -c 'read -p "Enter word to lookup: " word &amp;&amp; [[ -n "$word" ]] &amp;&amp; dict "$word" | less'</command>
+          <command>firejail transmission-gtk</command>
         </action>
       </keybind>
       <keybind key="e">
