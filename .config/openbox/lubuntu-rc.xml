@@ -526,6 +526,11 @@
           <command>urxvtc -name ,nodecor, -e vim ~/.bashrc</command>
         </action>
       </keybind>
+      <keybind key="c">
+        <action name="Execute">
+          <command>urxvtc -name ,nodecor, -e bash -c 'crontab -e &amp;&amp; crontab -l &gt; ~/crontab'</command>
+        </action>
+      </keybind>
       <keybind key="o">
         <action name="Execute">
           <command>urxvtc -name ,nodecor, -e vim ~/.config/openbox/lubuntu-rc.xml</command>
@@ -547,6 +552,11 @@
       <keybind key="v">
         <action name="Execute">
           <command>urxvtc -name ,nodecor, -e vim ~/.vimrc</command>
+        </action>
+      </keybind>
+      <keybind key="x">
+        <action name="Execute">
+          <command>urxvtc -name ,nodecor, -e vim ~/.Xresources</command>
         </action>
       </keybind>
     </keybind>
