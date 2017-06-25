@@ -1565,21 +1565,12 @@
     <application class="Evince">
       <maximized>true</maximized>
     </application>
-    <application class="Gnome-terminal">
-      <focus>yes</focus>
-      <maximized>true</maximized>
-    </application>
-    <application class="Gvim">
-      <decor>no</decor>
-      <maximized>true</maximized>
-    </application>
     <application class="Luckybackup" type="normal">
       <focus>no</focus>
       <iconic>yes</iconic>
     </application>
     <application class="Thunderbird" role="3pane">
       <decor>no</decor>
-      <maximized>true</maximized>
     </application>
     <application name="Navigator" class="Firefox">
       <decor>no</decor>
