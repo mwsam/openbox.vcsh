@@ -623,7 +623,7 @@
       </keybind>
       <keybind key="m">
         <action name="Execute">
-          <command>bash -c 'xdotool search --classname cmus windowactivate || urxvtc -name ,cmus,nodecor, -e firejail cmus'</command>
+          <command>bash -c 'xdotool search --classname ,cmus, windowactivate || urxvtc -name ,cmus,nodecor, -e firejail cmus'</command>
         </action>
       </keybind>
       <keybind key="S-m">
@@ -653,7 +653,7 @@
       </keybind>
       <keybind key="t">
         <action name="Execute">
-          <command>bash -c 'xdotool search --name tmux windowactivate &amp;&amp; tmux new-window || urxvtc -name ,nodecor, -e tmux'</command>
+          <command>bash -c 'xdotool search --classname ,tmux, windowactivate &amp;&amp; tmux new-window || urxvtc -name ,tmux,nodecor, -e tmux'</command>
         </action>
       </keybind>
       <keybind key="S-t">
