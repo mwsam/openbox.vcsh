@@ -569,12 +569,12 @@
       </keybind>
       <keybind key="b">
         <action name="Execute">
-          <command>firejail firefox</command>
+          <command>firefox</command>
         </action>
       </keybind>
       <keybind key="S-b">
         <action name="Execute">
-          <command>firejail chromium-browser --enable-precise-memory-info --remote-debugging-port=9222</command>
+          <command>chromium-browser --enable-precise-memory-info --remote-debugging-port=9222</command>
         </action>
       </keybind>
       <keybind key="c">
@@ -589,7 +589,7 @@
       </keybind>
       <keybind key="S-d">
         <action name="Execute">
-          <command>firejail transmission-gtk</command>
+          <command>transmission-gtk</command>
         </action>
       </keybind>
       <keybind key="e">
@@ -618,17 +618,17 @@
       </keybind>
       <keybind key="i">
         <action name="Execute">
-          <command>firejail pidgin</command>
+          <command>pidgin</command>
         </action>
       </keybind>
       <keybind key="m">
         <action name="Execute">
-          <command>bash -c 'xdotool search --classname ,cmus, windowactivate || urxvtc -name ,cmus,nodecor, -e firejail cmus'</command>
+          <command>bash -c 'xdotool search --classname ,cmus, windowactivate || urxvtc -name ,cmus,nodecor, -e cmus'</command>
         </action>
       </keybind>
       <keybind key="S-m">
         <action name="Execute">
-          <command>firejail thunderbird</command>
+          <command>thunderbird</command>
         </action>
       </keybind>
       <keybind key="n">
