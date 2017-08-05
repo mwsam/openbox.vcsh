@@ -651,6 +651,11 @@
           <command>urxvtc -name ,nodecor, -e htop</command>
         </action>
       </keybind>
+      <keybind key="S-s">
+        <action name="Execute">
+          <command>urxvtc -name ,nodecor, -e sudo iotop --accumulated --only</command>
+        </action>
+      </keybind>
       <keybind key="t">
         <action name="Execute">
           <command>bash -c 'xdotool search --classname ,tmux, windowactivate &amp;&amp; tmux new-window || urxvtc -name ,tmux,nodecor, -e tmux'</command>
