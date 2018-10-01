@@ -567,6 +567,11 @@
           <command>keepassx</command>
         </action>
       </keybind>
+      <keybind key="a">
+        <action name="Execute">
+          <command>aseprite</command>
+        </action>
+      </keybind>
       <keybind key="b">
         <action name="Execute">
           <command>firefox</command>
@@ -634,6 +639,11 @@
       <keybind key="n">
         <action name="Execute">
           <command>urxvtc -e node --allow-natives-syntax --expose-gc</command>
+        </action>
+      </keybind>
+      <keybind key="S-n">
+        <action name="Execute">
+          <command>urxvtc -name ,nodecor, -e sudo nethogs wls5</command>
         </action>
       </keybind>
       <keybind key="p">
