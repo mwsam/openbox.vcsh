@@ -961,7 +961,7 @@
     </keybind>
     <keybind key="W-A-s">
       <action name="Execute">
-        <command>bash -c 'notify-send -t 5000 "$(cmus-remote -Q 2&gt;&amp;1 | head -n 4)"'</command>
+        <command>bash -c 'notify-send -t 5000 cmus "$(cmus-remote -Q 2&gt;&amp;1 | head -n 4)"'</command>
       </action>
     </keybind>
     <!-- Keybindings for running Run menu from Lxpanel on Home + R-->
