@@ -962,7 +962,7 @@
         <command>cmus-remote --next</command>
       </action>
     </keybind>
-    <keybind key="W-A-s">
+    <keybind key="W-A-m">
       <action name="Execute">
         <command>bash -c 'notify-send -t 5000 cmus "$(cmus-remote -Q 2&gt;&amp;1 | head -n 4)"'</command>
       </action>
