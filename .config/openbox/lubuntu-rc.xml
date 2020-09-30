@@ -937,6 +937,61 @@
     <keybind key="W-w">
       <action name="Move"/>
     </keybind>
+    <keybind key="W-A-a">
+      <action name="Execute">
+        <command>xdotool click 1</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-t">
+      <action name="Execute">
+        <command>xdotool click 2</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-g">
+      <action name="Execute">
+        <command>xdotool click 3</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-w">
+      <action name="Execute">
+        <command>xdotool click 4</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-k">
+      <action name="Execute">
+        <command>xdotool click 4</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-r">
+      <action name="Execute">
+        <command>xdotool click 5</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-j">
+      <action name="Execute">
+        <command>xdotool click 5</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-e">
+      <action name="Execute">
+        <command>xdotool mousemove_relative --polar 0 20</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-s">
+      <action name="Execute">
+        <command>xdotool mousemove_relative --polar 270 20</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-d">
+      <action name="Execute">
+        <command>xdotool mousemove_relative --polar 180 20</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-f">
+      <action name="Execute">
+        <command>xdotool mousemove_relative --polar 90 20</command>
+      </action>
+    </keybind>
     <keybind key="W-A-z">
       <action name="Execute">
         <command>cmus-remote --prev</command>
