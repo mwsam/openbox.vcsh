@@ -535,41 +535,41 @@
     <keybind key="W-c">
       <keybind key="b">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e vim ~/.bashrc</command>
+          <command>urxvtc -e vim ~/.bashrc</command>
         </action>
       </keybind>
       <keybind key="c">
         <action name="Execute">
           <!-- Need bash -i to use favorite editor. -->
-          <command>urxvtc -name ,nodecor, -e bash -ic 'crontab -e &amp;&amp; crontab -l &gt; ~/crontab'</command>
+          <command>urxvtc -e bash -ic 'crontab -e &amp;&amp; crontab -l &gt; ~/crontab'</command>
         </action>
       </keybind>
       <keybind key="o">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e vim ~/.config/openbox/lubuntu-rc.xml</command>
+          <command>urxvtc -e vim ~/.config/openbox/lubuntu-rc.xml</command>
         </action>
       </keybind>
       <!-- Edit snippets -->
       <keybind key="s">
         <keybind key="j">
           <action name="Execute">
-            <command>urxvtc -name ,nodecor, -e vim ~/.vim/snippets/javascript/javascript.snippets</command>
+            <command>urxvtc -e vim ~/.vim/snippets/javascript/javascript.snippets</command>
           </action>
         </keybind>
       </keybind>
       <keybind key="t">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e vim ~/.tmux.conf</command>
+          <command>urxvtc -e vim ~/.tmux.conf</command>
         </action>
       </keybind>
       <keybind key="v">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e vim ~/.vimrc</command>
+          <command>urxvtc -e vim ~/.vimrc</command>
         </action>
       </keybind>
       <keybind key="x">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e vim ~/.Xresources</command>
+          <command>urxvtc -e vim ~/.Xresources</command>
         </action>
       </keybind>
     </keybind>
@@ -602,7 +602,7 @@
       </keybind>
       <keybind key="d">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -title dict -e bash -c 'read -p "Enter word to lookup: " word &amp;&amp; [[ -n "$word" ]] &amp;&amp; dict "$word" | less'</command>
+          <command>urxvtc -title dict -e bash -c 'read -p "Enter word to lookup: " word &amp;&amp; [[ -n "$word" ]] &amp;&amp; dict "$word" | less'</command>
         </action>
       </keybind>
       <keybind key="S-d">
@@ -612,7 +612,7 @@
       </keybind>
       <keybind key="e">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e ranger</command>
+          <command>urxvtc -e ranger</command>
         </action>
       </keybind>
       <keybind key="S-e">
@@ -641,7 +641,7 @@
       </keybind>
       <keybind key="m">
         <action name="Execute">
-          <command>bash -c 'xdotool search --classname ,cmus, windowactivate || urxvtc -name ,cmus,nodecor, -e cmus'</command>
+          <command>bash -c 'xdotool search --classname ,cmus, windowactivate || urxvtc -name ,cmus, -e cmus'</command>
         </action>
       </keybind>
       <keybind key="S-m">
@@ -656,7 +656,7 @@
       </keybind>
       <keybind key="S-n">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e sudo nethogs wls5</command>
+          <command>urxvtc -e sudo nethogs wlp5s0</command>
         </action>
       </keybind>
       <keybind key="p">
@@ -671,27 +671,27 @@
       </keybind>
       <keybind key="s">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e htop</command>
+          <command>urxvtc -e htop</command>
         </action>
       </keybind>
       <keybind key="S-s">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e sudo iotop --accumulated --only</command>
+          <command>urxvtc -e sudo iotop --accumulated --only</command>
         </action>
       </keybind>
       <keybind key="t">
         <action name="Execute">
-          <command>bash -c 'xdotool search --classname ,tmux, windowactivate &amp;&amp; tmux new-window || urxvtc -name ,tmux,nodecor, -e tmux'</command>
+          <command>bash -c 'xdotool search --classname ,tmux, windowactivate &amp;&amp; tmux new-window || urxvtc -name ,tmux, -e tmux'</command>
         </action>
       </keybind>
       <keybind key="S-t">
         <action name="Execute">
-          <command>urxvtc -name ,tmux,nodecor, -title tmux -e bash -c 'tmux attach || tmux'</command>
+          <command>urxvtc -name ,tmux, -title tmux -e bash -c 'tmux attach || tmux'</command>
         </action>
       </keybind>
       <keybind key="v">
         <action name="Execute">
-          <command>urxvtc -name ,nodecor, -e vim</command>
+          <command>urxvtc -e vim</command>
         </action>
       </keybind>
       <keybind key="y">
@@ -1638,19 +1638,19 @@
     <application class="Evince">
       <maximized>true</maximized>
     </application>
-    <application class="Luckybackup" type="normal">
-      <focus>no</focus>
-      <iconic>yes</iconic>
-    </application>
-    <application class="Thunderbird" role="3pane">
-      <decor>no</decor>
-    </application>
-    <application name="Navigator" class="Firefox">
+    <application class="Firefox" name="Navigator">
       <decor>no</decor>
       <!-- Needed after turning on privacy.resistFingerprinting -->
       <maximized>true</maximized>
     </application>
-    <application name="Navigator" class="Opera">
+    <application class="Luckybackup" type="normal">
+      <focus>no</focus>
+      <iconic>yes</iconic>
+    </application>
+    <application class="Opera" name="Navigator">
+      <decor>no</decor>
+    </application>
+    <application class="Thunderbird" role="3pane">
       <decor>no</decor>
     </application>
     <application class="Update-manager">
@@ -1658,6 +1658,7 @@
       <iconic>yes</iconic>
     </application>
     <application class="URxvt">
+      <decor>no</decor>
       <maximized>true</maximized>
     </application>
     <application class="Zathura">
